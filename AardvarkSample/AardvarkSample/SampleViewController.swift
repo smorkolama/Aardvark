@@ -157,6 +157,6 @@ class SampleViewController : UIViewController {
             return
         }
         
-        log("Tapped \(NSStringFromCGPoint(tapRecognizer.location(in: nil)))", userInfo: [tapLogKey : true as NSNumber])
+        log("Tapped \(NSCoder.string(for: tapRecognizer.location(in: nil)))", userInfo: [tapLogKey : true as NSNumber])
     }
 }
