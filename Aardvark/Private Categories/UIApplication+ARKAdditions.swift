@@ -48,8 +48,8 @@ extension UIApplication {
         UIApplication.bugReporterToGestureRecognizerMap.setObject(bugReportingGestureRecognizer, forKey: bugReporter)
         
         if !UIApplication.observingKeyWindowNotifications {
-            NotificationCenter.default.addObserver(self, selector: #selector(windowDidBecomeKey(notification:)), name: NSNotification.Name.UIWindowDidBecomeKey, object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(windowDidResignKey(notification:)), name: NSNotification.Name.UIWindowDidResignKey, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(windowDidBecomeKey(notification:)), name: UIWindow.didBecomeKeyNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(windowDidResignKey(notification:)), name: UIWindow.didBecomeKeyNotification, object: nil)
             
             UIApplication.observingKeyWindowNotifications = true
         }
